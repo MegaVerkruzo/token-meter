@@ -4,8 +4,11 @@ import SwiftUI
 struct ContextWidget: App {
     var body: some Scene {
         Window("Контекст чатов Codex", id: "context") {
-            ChatList()
-        }.defaultSize(width: 620, height: 360)
+            TabView {
+                ChatList().tabItem { Label("Контекст", systemImage: "bubble.left.and.bubble.right") }
+                JobsPage().tabItem { Label("Джобы", systemImage: "clock.arrow.circlepath") }
+            }
+        }.defaultSize(width: 680, height: 440)
     }
 }
 

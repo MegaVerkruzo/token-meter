@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 app="build/Codex Context.app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources" build/modules
 cp Resources/Lincoln.icns "$app/Contents/Resources/Lincoln.icns"
-swiftc -target "$(uname -m)-apple-macosx13.0" -O -module-cache-path build/modules Usage.swift Widget.swift -o "$app/Contents/MacOS/CodexContext"
+swiftc -target "$(uname -m)-apple-macosx13.0" -O -module-cache-path build/modules Usage.swift Jobs.swift JobsPage.swift Widget.swift -o "$app/Contents/MacOS/CodexContext"
 cat > "$app/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <plist version="1.0"><dict>
